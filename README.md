@@ -1,12 +1,12 @@
 # Digital Shop Bot
 
-A beginner-friendly Telegram bot built with `node-telegram-bot-api`, `dotenv`, Supabase, and a Vercel webhook deployment setup.
+A beginner-friendly Telegram bot built with `node-telegram-bot-api`, `Express.js`, `dotenv`, Supabase, and a Vercel webhook deployment setup.
 
 ## Project structure
 
 ```text
 api/
-  webhook.js
+  bot.js
 scripts/
   setWebhook.js
 src/
@@ -92,7 +92,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 13. Open this URL to confirm the function is live:
 
    ```text
-   https://your-project-name.vercel.app/api/webhook
+   https://your-project-name.vercel.app/api/bot
    ```
 
    It should return a small JSON response saying the webhook is ready.
@@ -105,7 +105,7 @@ For local Vercel-style testing:
 npm run dev
 ```
 
-This runs `vercel dev`, which serves the webhook locally.
+This runs `vercel dev`, which serves the Express webhook locally.
 
 ## Bot behavior
 
@@ -128,4 +128,4 @@ This runs `vercel dev`, which serves the webhook locally.
 - Includes back buttons for navigation
 - Saves users and orders in Supabase
 - Stores order status as `pending`, `confirmed`, or `cancelled`
-- Uses a Telegram webhook for Vercel deployment
+- Uses an Express webhook at `/api/bot` for Vercel deployment

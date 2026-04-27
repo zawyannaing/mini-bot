@@ -7,7 +7,7 @@ async function main() {
   const appUrl = getRequiredEnv('APP_URL');
   const webhookSecret = getRequiredEnv('TELEGRAM_WEBHOOK_SECRET');
 
-  const webhookUrl = `${appUrl.replace(/\/$/, '')}/api/webhook`;
+  const webhookUrl = `${appUrl.replace(/\/$/, '')}/api/bot`;
   const endpoint = `https://api.telegram.org/bot${token}/setWebhook`;
 
   const response = await fetch(endpoint, {

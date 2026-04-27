@@ -2,7 +2,7 @@
   "name": "new-project",
   "version": "1.0.0",
   "description": "Telegram bot project for Digital Shop Bot",
-  "main": "api/webhook.js",
+  "main": "api/bot.js",
   "scripts": {
     "dev": "npx vercel dev",
     "start": "node -e \"console.log('Use npm run dev for local testing or deploy to Vercel.')\"",
@@ -14,6 +14,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.104.1",
     "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "node-telegram-bot-api": "^0.67.0"
   }
 }
