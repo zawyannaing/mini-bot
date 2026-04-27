@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Aurora Supply</title>
+  <meta name="description" content="Browse digital products, game currency, and gift cards with filters and search.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="shop">
+  <div class="background-layer" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AS</span>
+        <div class="brand-copy">
+          <strong>Aurora Supply</strong>
+          <small>Instant digital delivery</small>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Shop</a>
+        <a href="#categories">Categories</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+        <button class="icon-button" type="button" data-open-search>Search</button>
+        <a class="icon-button" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+      </div>
+      <button class="menu-toggle" type="button">Menu</button>
+    </div>
+  </header>
+
+  <main class="main-shell">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Store Catalog</span>
+        <h1>Shop digital products by category</h1>
+        <p>Search, filter, and buy instantly with mobile-optimized cards, swipeable categories, and a clean app-like browsing experience.</p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container shop-layout">
+        <div>
+          <section class="search-shell reveal-on-scroll">
+            <label class="form-field">
+              <span>Search products</span>
+              <input id="shop-search" class="search-input" type="search" placeholder="PUBG UC, Steam Wallet, Windows key...">
+            </label>
+            <div class="summary-line">
+              <span class="muted-text">Live filter results</span>
+              <strong id="results-count">0 products</strong>
+            </div>
+          </section>
+
+          <section class="category-strip reveal-on-scroll" id="categories">
+            <div id="shop-categories" class="category-track"></div>
+          </section>
+
+          <section class="page-section">
+            <div id="shop-grid" class="product-grid"></div>
+            <div id="empty-shop" class="empty-card" hidden>
+              <h3>No products matched</h3>
+              <p>Try another keyword or switch to another category.</p>
+            </div>
+          </section>
+        </div>
+
+        <aside class="summary-panel reveal-on-scroll">
+          <span class="eyebrow">Quick Overview</span>
+          <h2>Fast checkout setup</h2>
+          <div class="summary-stack">
+            <div class="summary-line"><span>Categories</span><strong>3</strong></div>
+            <div class="summary-line"><span>Experience</span><strong>Mobile-first</strong></div>
+            <div class="summary-line"><span>Checkout</span><strong>UI ready</strong></div>
+          </div>
+          <a class="button button-primary" href="cart.html">Go to Cart</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-shell">
+      <div class="footer-row">
+        <div class="footer-brand">
+          <strong>Aurora Supply</strong>
+          <p class="footer-copy">Searchable catalog with reusable product cards and API-friendly state.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav">
+    <a href="index.html"><span>Home</span><small>Start</small></a>
+    <a href="products.html" class="active"><span>Shop</span><small>Browse</small></a>
+    <a href="cart.html"><span>Cart</span><small data-cart-count>0</small></a>
+    <a href="dashboard.html"><span>Account</span><small>Orders</small></a>
+  </nav>
+
+  <div id="toast-host" class="toast-host" aria-live="polite"></div>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

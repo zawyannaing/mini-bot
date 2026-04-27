@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart & Checkout | Aurora Supply</title>
+  <meta name="description" content="Review your cart, enter email and game ID, and complete a UI-ready checkout.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="cart">
+  <div class="background-layer" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AS</span>
+        <div class="brand-copy">
+          <strong>Aurora Supply</strong>
+          <small>Instant digital delivery</small>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="products.html#categories">Categories</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+        <button class="icon-button" type="button" data-open-search>Search</button>
+        <a class="icon-button" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+      </div>
+      <button class="menu-toggle" type="button">Menu</button>
+    </div>
+  </header>
+
+  <main class="main-shell">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Checkout</span>
+        <h1>Review cart and finish the order</h1>
+        <p>UI-only payment method cards and a backend-ready form for email, game ID, and order summary.</p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container cart-layout">
+        <div class="checkout-panel reveal-on-scroll">
+          <div class="section-title">
+            <div>
+              <span class="eyebrow">Shopping Cart</span>
+              <h2>Your items</h2>
+            </div>
+            <strong id="cart-total">$0.00</strong>
+          </div>
+          <div id="cart-items" class="summary-stack"></div>
+          <div id="cart-empty" class="empty-card" hidden>
+            <h3>Your cart is empty</h3>
+            <p>Browse products and add items to start checkout.</p>
+          </div>
+        </div>
+
+        <aside class="summary-panel reveal-on-scroll">
+          <span class="eyebrow">Checkout Form</span>
+          <h2>Complete order</h2>
+          <form id="checkout-form" class="checkout-form">
+            <label class="form-field">
+              <span>Email</span>
+              <input id="checkout-email" class="form-input" type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label class="form-field">
+              <span>Game ID / Account ID</span>
+              <input id="checkout-game-id" class="form-input" type="text" name="gameId" placeholder="Enter player ID or account ID" required>
+            </label>
+            <div class="form-field">
+              <span>Payment method</span>
+              <div id="payment-options" class="summary-stack"></div>
+            </div>
+            <div class="summary-stack">
+              <div class="summary-line"><span>Subtotal</span><strong id="summary-subtotal">$0.00</strong></div>
+              <div class="summary-line"><span>Delivery</span><strong>Instant</strong></div>
+              <div class="summary-line total"><span>Total</span><strong id="summary-total">$0.00</strong></div>
+            </div>
+            <button class="button button-primary" type="submit">Place Order</button>
+          </form>
+          <div id="order-success" class="success-banner" hidden></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="index.html"><span>Home</span><small>Start</small></a>
+    <a href="products.html"><span>Shop</span><small>Browse</small></a>
+    <a href="cart.html" class="active"><span>Cart</span><small data-cart-count>0</small></a>
+    <a href="dashboard.html"><span>Account</span><small>Orders</small></a>
+  </nav>
+
+  <div id="toast-host" class="toast-host" aria-live="polite"></div>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

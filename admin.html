@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | NeonVault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+  <div class="background-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">NV</span>
+        <div>
+          <strong>NeonVault</strong>
+          <small>Premium digital access hub</small>
+        </div>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation">Menu</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="dashboard.html">My Purchases</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div id="admin-lock" class="admin-lock glass-panel hidden">
+        <p class="panel-label">Protected Admin</p>
+        <h1>Enter secret access key</h1>
+        <form id="admin-access-form" class="stack-form">
+          <label>
+            Secret Key
+            <input type="password" id="admin-access-key" placeholder="Enter admin key" required>
+          </label>
+          <button class="button button-primary" type="submit">Unlock Admin</button>
+        </form>
+        <p class="muted">Tip: version 1 uses a client-side secret. Replace with proper auth in backend version.</p>
+      </div>
+
+      <div id="admin-panel" class="hidden">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Hidden Control Room</span>
+            <h1>Admin Panel</h1>
+          </div>
+          <div class="button-row">
+            <button class="button button-ghost" id="admin-logout" type="button">Lock Admin</button>
+          </div>
+        </div>
+
+        <section class="backend-note glass-panel">
+          <p class="panel-label">Backend Ready</p>
+          <h3 id="backend-mode-title">Current mode: frontend demo</h3>
+          <p id="backend-mode-copy">This admin is hidden from public navigation, but true protection needs backend authentication and server-side product, post, payment, and download APIs.</p>
+        </section>
+
+        <section class="admin-grid">
+          <article class="glass-panel">
+            <p class="panel-label">Manage Products</p>
+            <form id="product-form" class="stack-form">
+              <input type="hidden" id="product-id">
+              <label>
+                Product Name
+                <input type="text" id="product-name" required>
+              </label>
+              <label>
+                Price
+                <input type="number" id="product-price" min="0" step="0.01" required>
+              </label>
+              <label>
+                Category
+                <input type="text" id="product-category" placeholder="VPN, Course, Game Currency..." required>
+              </label>
+              <label>
+                Image URL
+                <input type="url" id="product-image" required>
+              </label>
+              <label>
+                Video URL (optional)
+                <input type="url" id="product-video">
+              </label>
+              <label>
+                File URL
+                <input type="url" id="product-file" required>
+              </label>
+              <label>
+                Description
+                <textarea id="product-description" rows="5" required></textarea>
+              </label>
+              <div class="button-row">
+                <button class="button button-primary" type="submit">Add Product</button>
+                <button class="button button-secondary" type="button" id="reset-product-form">Clear</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="glass-panel">
+            <p class="panel-label">Manage Posts</p>
+            <form id="post-form" class="stack-form">
+              <input type="hidden" id="post-id">
+              <label>
+                Post Title
+                <input type="text" id="post-title" required>
+              </label>
+              <label>
+                Tag
+                <input type="text" id="post-tag" placeholder="Launch, Promo, Community" required>
+              </label>
+              <label>
+                Content
+                <textarea id="post-content" rows="6" required></textarea>
+              </label>
+              <div class="button-row">
+                <button class="button button-primary" type="submit">Publish Post</button>
+                <button class="button button-secondary" type="button" id="reset-post-form">Clear</button>
+              </div>
+            </form>
+          </article>
+        </section>
+
+        <section class="section compact-top">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Inventory</span>
+              <h2>Current products</h2>
+            </div>
+          </div>
+          <div id="admin-product-list" class="admin-list"></div>
+        </section>
+
+        <section class="section compact-top">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Announcements</span>
+              <h2>Published posts</h2>
+            </div>
+          </div>
+          <div id="admin-post-list" class="admin-list"></div>
+        </section>
+
+        <section class="section compact-top">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Manual Payments</span>
+              <h2>Recent payment submissions</h2>
+            </div>
+          </div>
+          <div id="payment-list" class="admin-list"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

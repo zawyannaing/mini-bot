@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Aurora Supply</title>
+  <meta name="description" content="View order history, saved email/game ID, and customer profile information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="dashboard">
+  <div class="background-layer" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AS</span>
+        <div class="brand-copy">
+          <strong>Aurora Supply</strong>
+          <small>Instant digital delivery</small>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="products.html#categories">Categories</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+        <button class="icon-button" type="button" data-open-search>Search</button>
+        <a class="icon-button" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+      </div>
+      <button class="menu-toggle" type="button">Menu</button>
+    </div>
+  </header>
+
+  <main class="main-shell">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Customer Dashboard</span>
+        <h1>Track orders and save checkout info</h1>
+        <p>A lightweight profile and order history interface powered by localStorage for now and ready to swap to a real user backend later.</p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container dashboard-layout">
+        <div class="checkout-panel reveal-on-scroll">
+          <div class="section-title">
+            <div>
+              <span class="eyebrow">Order History</span>
+              <h2>Recent purchases</h2>
+            </div>
+          </div>
+          <div id="order-history" class="summary-stack"></div>
+        </div>
+
+        <aside class="summary-stack">
+          <section class="summary-panel reveal-on-scroll">
+            <span class="eyebrow">Saved Profile</span>
+            <h2>Profile section</h2>
+            <div class="summary-stack">
+              <div class="summary-line"><span>Name</span><strong id="saved-display-name">Aurora buyer</strong></div>
+              <div class="summary-line"><span>Email</span><strong id="saved-email">Not saved yet</strong></div>
+              <div class="summary-line"><span>Game ID</span><strong id="saved-game-id">Not saved yet</strong></div>
+            </div>
+            <form id="profile-form" class="profile-form">
+              <label class="form-field">
+                <span>Display name</span>
+                <input id="profile-display-name" class="form-input" type="text" name="displayName" placeholder="Aurora buyer">
+              </label>
+              <label class="form-field">
+                <span>Email</span>
+                <input id="profile-email" class="form-input" type="email" name="email" placeholder="you@example.com">
+              </label>
+              <label class="form-field">
+                <span>Saved game ID</span>
+                <input id="profile-game-id" class="form-input" type="text" name="gameId" placeholder="Player ID">
+              </label>
+              <button class="button button-primary" type="submit">Save Profile</button>
+            </form>
+          </section>
+
+          <section class="summary-panel reveal-on-scroll">
+            <div class="section-title">
+              <div>
+                <span class="eyebrow">Recommended</span>
+                <h2>Buy again</h2>
+              </div>
+            </div>
+            <div id="dashboard-products" class="dashboard-grid"></div>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="index.html"><span>Home</span><small>Start</small></a>
+    <a href="products.html"><span>Shop</span><small>Browse</small></a>
+    <a href="cart.html"><span>Cart</span><small data-cart-count>0</small></a>
+    <a href="dashboard.html" class="active"><span>Account</span><small>Orders</small></a>
+  </nav>
+
+  <div id="toast-host" class="toast-host" aria-live="polite"></div>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
