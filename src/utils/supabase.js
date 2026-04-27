@@ -1,8 +1,8 @@
 const { createClient } = require('@supabase/supabase-js');
-const { getRequiredEnv } = require('./env');
+const { getSupabaseUrl, getSupabaseServiceRoleKey } = require('./env');
 
-const supabaseUrl = getRequiredEnv('SUPABASE_URL');
-const supabaseServiceRoleKey = getRequiredEnv('SUPABASE_SERVICE_ROLE_KEY');
+const supabaseUrl = getSupabaseUrl();
+const supabaseServiceRoleKey = getSupabaseServiceRoleKey();
 
 const supabase = createClient(supabaseUrl, supabaseServiceRoleKey, {
   auth: {

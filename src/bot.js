@@ -6,13 +6,13 @@ const { registerMenuHandler } = require('./handlers/menuHandler');
 const { registerOrderFormHandler } = require('./handlers/orderFormHandler');
 const { registerAdminHandler } = require('./handlers/adminHandler');
 const { registerPaymentHandler } = require('./handlers/paymentHandler');
-const { getRequiredEnv } = require('./utils/env');
+const { getTelegramBotToken, getAdminChatId } = require('./utils/env');
 
 let botInstance;
 
 function createBot() {
-  const token = getRequiredEnv('TELEGRAM_BOT_TOKEN');
-  const adminChatId = getRequiredEnv('ADMIN_CHAT_ID');
+  const token = getTelegramBotToken();
+  const adminChatId = getAdminChatId();
 
   const bot = new TelegramBot(token);
 

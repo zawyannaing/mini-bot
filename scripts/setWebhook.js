@@ -1,11 +1,15 @@
 require('dotenv').config();
 
-const { getRequiredEnv } = require('../src/utils/env');
+const {
+  getTelegramBotToken,
+  getAppUrl,
+  getWebhookSecret,
+} = require('../src/utils/env');
 
 async function main() {
-  const token = getRequiredEnv('TELEGRAM_BOT_TOKEN');
-  const appUrl = getRequiredEnv('APP_URL');
-  const webhookSecret = getRequiredEnv('TELEGRAM_WEBHOOK_SECRET');
+  const token = getTelegramBotToken();
+  const appUrl = getAppUrl();
+  const webhookSecret = getWebhookSecret();
 
   const webhookUrl = `${appUrl.replace(/\/$/, '')}/api/bot`;
   const endpoint = `https://api.telegram.org/bot${token}/setWebhook`;

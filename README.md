@@ -41,6 +41,11 @@ SUPABASE_URL=your_supabase_project_url
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 ```
 
+Important:
+- `SUPABASE_URL` must be your project API URL ending with `.supabase.co`
+- `SUPABASE_SERVICE_ROLE_KEY` must be the `service_role` key, not the publishable key
+- `TELEGRAM_WEBHOOK_SECRET` must be a real secret string, not the placeholder text
+
 ## Vercel deployment
 
 1. Install dependencies:
